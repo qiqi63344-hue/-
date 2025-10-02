@@ -1,0 +1,1102 @@
+﻿<!DOCTYPE html><html lang="zh-CN"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>靖康年间的汴梁：从李师师看一个时代的文艺与命运</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --secondary: #64748b;
+            --accent: #d4af37;
+            --background: #fafafa;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --text-muted: #64748b;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: var(--surface);
+            border-right: 1px solid #e2e8f0;
+            overflow-y: auto;
+            z-index: 50;
+            padding: 2rem 1.5rem;
+        }
+        
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            min-height: 60vh;
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-style: italic;
+            font-weight: 600;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-image {
+            position: relative;
+            height: 400px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+        
+        .subsection-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1.5rem 0;
+            color: var(--secondary);
+        }
+        
+        .citation {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .citation:hover {
+            color: #b8941f;
+            text-decoration: underline;
+        }
+        
+        .pullquote {
+            font-size: 1.5rem;
+            font-style: italic;
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-left: 4px solid var(--accent);
+            border-radius: 0.5rem;
+        }
+        
+        .toc-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            padding-left: 1rem;
+            margin-left: -1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .toc-link:hover,
+        .toc-link.active {
+            color: var(--primary);
+            border-left-color: var(--accent);
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .toc-link.level-2 {
+            margin-left: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .toc-link.level-3 {
+            margin-left: 1.5rem;
+            font-size: 0.85rem;
+        }
+        
+        /* Mermaid chart styling */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none; /* 防止触摸设备上的默认行为 */
+            -webkit-user-select: none; /* 防止文本选择 */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+        
+        @media (max-width: 1024px) {
+            .toc-fixed {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .toc-fixed.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mermaid-container {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            .hero-image {
+                height: 300px;
+            }
+            .hero-section .bg-white.rounded-lg {
+                padding: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.75rem;
+            }
+            .subsection-title {
+                font-size: 1.25rem;
+            }
+            .px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .pullquote {
+                font-size: 1.125rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body>
+    <!-- Table of Contents -->
+    <nav class="toc-fixed">
+      <div class="mb-8">
+        <h3 class="font-bold text-lg mb-4 text-gray-800">目录</h3>
+      </div>
+      <div class="space-y-1">
+        <a class="toc-link level-1" href="#introduction">引言</a>
+        <a class="toc-link level-1" href="#section1">1. 李师师：北宋末世的文化符号与集体记忆</a>
+        <a class="toc-link level-2" href="#section1-1">1.1 靖康之变前后的命运沉浮</a>
+        <a class="toc-link level-2" href="#section1-2">1.2 作为文化符号的李师师</a>
+        <a class="toc-link level-1" href="#section2">2. 以李师师为核心的青楼文化与文人社交圈</a>
+        <a class="toc-link level-2" href="#section2-1">2.1 宋代&#34;角妓&#34;文化与文人雅士的社交生活</a>
+        <a class="toc-link level-2" href="#section2-2">2.2 对文学艺术的直接影响</a>
+        <a class="toc-link level-1" href="#section3">3. 靖康年间汴梁城的文化艺术生态</a>
+        <a class="toc-link level-2" href="#section3-1">3.1 宫廷与民间的文艺活动</a>
+        <a class="toc-link level-2" href="#section3-2">3.2 文化消费模式与社会氛围</a>
+        <a class="toc-link level-2" href="#section3-3">3.3 李师师在文化生态中的角色</a>
+        <a class="toc-link level-1" href="#section4">4. 靖康之变：一个时代的终结与文艺的转折</a>
+        <a class="toc-link level-2" href="#section4-1">4.1 汴梁的陷落与文化的断裂</a>
+        <a class="toc-link level-2" href="#section4-2">4.2 文艺表达中的末世记忆</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-grid max-w-7xl mx-auto px-8 py-16">
+          <div class="space-y-6">
+            <h1 class="hero-title serif">
+              靖康年间的汴梁
+              <br/>
+              从李师师看一个时代的文艺与命运
+            </h1>
+            <div class="space-y-4 text-lg text-gray-600">
+              <p>当绝代名妓的悲欢与王朝的兴衰交织，一个文化符号的诞生</p>
+              <div class="flex items-center space-x-4 text-sm">
+                <span class="flex items-center space-x-2">
+                  <i class="fas fa-map-marker-alt text-amber-600"></i>
+                  <span>北宋汴梁</span>
+                </span>
+                <span class="flex items-center space-x-2">
+                  <i class="fas fa-calendar text-amber-600"></i>
+                  <span>1126-1127年</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img alt="北宋汴梁城繁华景象的山水画" class="w-full h-full object-cover" src="https://kimi-web-img.moonshot.cn/img/pic4.zhimg.com/0949fb3ebe8c88f62a07d51349360ac206a616ee.jpg" size="large" aspect="wide" query="北宋汴梁城繁华" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+          </div>
+        </div>
+      </section>
+
+      <!-- Introduction -->
+      <section class="py-16 px-8 max-w-6xl mx-auto" id="introduction">
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+          <h2 class="section-title serif">引言</h2>
+          <div class="prose prose-lg max-w-none">
+            <p class="text-xl leading-relaxed text-gray-700 mb-6">
+              靖康年间的汴梁，是中国历史上一个极致繁华与骤然衰败交织的时代缩影。以李师师这位绝代名妓为切入点，可以深入探究其背后复杂的文化生态。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-600">
+              她不仅是文人雅士社交圈的核心，其青楼文化直接催生了宋词的繁荣；同时，她也是连接宫廷与民间的文化纽带，其个人命运与宋徽宗的审美情趣、宣和画院的兴盛以及瓦子勾栏的市井文艺紧密相连。靖康之变后，李师师从云端跌落，其被籍没家产、流落江南的悲剧，与北宋王朝的覆灭形成了惊人的同构关系。她因此超越了个体，成为一个承载北宋末世集体记忆与文化反思的强大符号。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1 -->
+      <section class="py-16 px-8 max-w-6xl mx-auto bg-white" id="section1">
+        <h2 class="section-title serif">1. 李师师：北宋末世的文化符号与集体记忆</h2>
+
+        <div class="prose prose-lg max-w-none">
+          <h3 class="subsection-title serif" id="section1-1">1.1 靖康之变前后的命运沉浮</h3>
+
+          <h4 class="text-xl font-semibold mb-4 mt-8">从汴京名妓到流落江南</h4>
+          <p class="mb-6">
+            李师师，这位在北宋末年名动京师的传奇女子，其生平与命运与整个时代的兴衰紧密相连。据《李师师外传》等野史笔记记载，她本为汴京东二厢永庆坊染局匠王寅之女，幼年丧母，曾舍身宝光寺为尼，因而得名&#34;师师&#34;<a class="citation" href="http://eprints.utar.edu.my/2287/1/CH-2016-1300227-1.pdf">[298]</a>。
+          </p>
+          <p class="mb-6">
+            宋徽宗在宦官张迪的游说下，多次微服私访李师师，并被其独特的气质和才华所倾倒，甚至为其居所题写&#34;醉杏楼&#34;匾额，并作画相赠<a class="citation" href="http://eprints.utar.edu.my/2287/1/CH-2016-1300227-1.pdf">[298]</a>。这段皇帝与名妓之间的风流韵事，成为当时汴梁城中最富传奇色彩的谈资。
+          </p>
+
+          <div class="pullquote serif">
+            &#34;辇毂繁华事可伤，师师垂老过湖湘。缕衣檀板无颜色，一曲当时动帝王。&#34;
+            <div class="text-sm mt-4 text-gray-600">—— 刘子翚《汴京纪事》</div>
+          </div>
+
+          <h4 class="text-xl font-semibold mb-4">被籍没家产的悲剧</h4>
+          <p class="mb-6">
+            靖康元年（1126年），金兵围困汴京，为了凑齐金人索要的巨额赔款，宋钦宗下令在京城内大肆搜刮金银财宝。据《三朝北盟会编》记载，靖康元年正月，尚书省奉钦宗圣旨，对李师师、赵元奴等倡优之家及其他艺人的财产进行籍没<a class="citation" href="http://m.3233.cn/n/o209-198110.html">[215]</a>
+            <a class="citation" href="https://m.thepaper.cn/newsDetail_forward_7289357">[186]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">结局之谜</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300 mb-6">
+              <thead>
+                <tr class="bg-gray-50">
+                  <th class="border border-gray-300 px-4 py-2 text-left">结局说法</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left">核心情节</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left">文献来源</th>
+                  <th class="border border-gray-300 px-4 py-2 text-left">分析评价</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">南渡流落说</td>
+                  <td class="border border-gray-300 px-4 py-2">家产被籍没后，李师师南渡至江浙、湖湘一带，重操旧业</td>
+                  <td class="border border-gray-300 px-4 py-2">《墨庄漫录》、刘子翚《汴京纪事诗》</td>
+                  <td class="border border-gray-300 px-4 py-2">此说在笔记和诗歌中均有印证，可信度相对较高</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">出家为尼说</td>
+                  <td class="border border-gray-300 px-4 py-2">失去徽宗庇护后，主动请求出家为女道士</td>
+                  <td class="border border-gray-300 px-4 py-2">《李师师外传》</td>
+                  <td class="border border-gray-300 px-4 py-2">为她提供了一个相对安稳的归宿，符合乱世中寻求避祸的常理</td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 px-4 py-2 font-medium">慷慨殉国说</td>
+                  <td class="border border-gray-300 px-4 py-2">金兵主帅指名索要，宁死不从，以金簪刺喉而亡</td>
+                  <td class="border border-gray-300 px-4 py-2">《李师师外传》</td>
+                  <td class="border border-gray-300 px-4 py-2">此说最为壮烈，但小说笔法浓重，缺乏可靠史实依据</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="subsection-title serif" id="section1-2">1.2 作为文化符号的李师师</h3>
+
+          <h4 class="text-xl font-semibold mb-4 mt-8">北宋繁华与衰败的象征</h4>
+          <p class="mb-6">
+            李师师的形象，在北宋末年的社会文化语境中，早已超越了一个普通名妓的范畴，成为一个集万千宠爱与争议于一身的文化符号。她既是汴梁城极致繁华的艺术象征，也是王朝走向衰败的深刻隐喻<a class="citation" href="https://www.kekeshici.com/shicijianshang/xingwang/51785.html">[296]</a>。
+          </p>
+
+          <div class="mb-8">
+            <img alt="北宋青楼女子在庭院中弹奏古琴" class="w-full h-64 object-cover rounded-lg shadow-md" src="https://kimi-web-img.moonshot.cn/imagegen/20251002/0217593776184148f9d8862f93347b6968efc6d463221b28de434_0.jpeg" size="medium" aspect="wide" style="photo" query="北宋青楼女子弹琴" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+            <p class="text-sm text-gray-500 mt-2 text-center">北宋青楼文化场景再现</p>
+          </div>
+
+          <h4 class="text-xl font-semibold mb-4">后世文艺作品中的形象演变</h4>
+          <p class="mb-6">
+            在《水浒传》中，她成为了梁山好汉与朝廷之间的桥梁，在宋江的招安过程中扮演了关键角色<a class="citation" href="https://www.sohu.com/a/242785893_636365">[214]</a>
+            <a class="citation" href="https://www.lifeweek.com.cn/article/117682">[268]</a>。在《续金瓶梅》等小说中，李师师的形象则被赋予了更多的道德评判色彩，她被描绘成一个祸国殃民的&#34;红颜祸水&#34;<a class="citation" href="https://book.douban.com/reading/10532362/">[273]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">刘子翚《汴京纪事》中的&#34;师师垂老&#34;意象</h4>
+          <p class="mb-6">
+            南宋理学家刘子翚的《汴京纪事二十首》是宋诗中以诗纪事的典范之作，其最后一首以李师师为主角，通过描绘其晚景的凄凉，抒发了深沉的亡国之痛<a class="citation" href="https://m.gushiwen.cn/shiwenv_c689eae0951f.aspx">[294]</a>。
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="py-16 px-8 max-w-6xl mx-auto bg-gray-50" id="section2">
+        <h2 class="section-title serif">2. 以李师师为核心的青楼文化与文人社交圈</h2>
+
+        <div class="prose prose-lg max-w-none">
+          <h3 class="subsection-title serif" id="section2-1">2.1 宋代&#34;角妓&#34;文化与文人雅士的社交生活</h3>
+
+          <h4 class="text-xl font-semibold mb-4 mt-8">&#34;角妓&#34;的角色：不仅是歌妓，更是社交媒介</h4>
+          <p class="mb-6">
+            在北宋时期，尤其是在繁华的汴梁城，青楼文化已经发展到了一个相当成熟的阶段。其中，&#34;角妓&#34;作为青楼中的顶级艺人，其角色和功能已经远远超出了单纯的性服务提供者。根据孟元老《东京梦华录》的记载，李师师在&#34;小唱&#34;艺人中排名第一，其技艺和声望无人能及<a class="citation" href="https://m.thepaper.cn/newsDetail_forward_7289357">[269]</a>。
+          </p>
+
+          <div class="mb-8">
+            <img alt="北宋文人雅集场景" class="w-full h-64 object-cover rounded-lg shadow-md" src="https://kimi-web-img.moonshot.cn/img/pic.yupoo.com/4f42c2a2e22122dcb5a909c7bb203da40255e790.jpg" size="medium" aspect="wide" query="北宋文人雅集" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+            <p class="text-sm text-gray-500 mt-2 text-center">北宋文人雅集场景再现</p>
+          </div>
+
+          <h4 class="text-xl font-semibold mb-4">文人雅士的社交场所</h4>
+          <p class="mb-6">
+            北宋文人雅士的社交生活丰富多彩，其活动场所也多种多样，从繁华的市井青楼到清幽的私人园林，都留下了他们的足迹。青楼，尤其是像李师师这样的名妓所经营的场所，是文人社交的重要平台。柳永的词作，就生动地描绘了这种倚红偎翠的娱乐空间<a class="citation" href="https://g-city.sass.org.cn/_upload/article/files/81/9a/9ecc0c1e4b0688730d4c4303666e/355e10e7-5f9a-4d66-b562-76f3d729f92b.pdf">[258]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">李师师在文人圈中的地位与影响力</h4>
+          <p class="mb-6">
+            李师师在北宋末年的文人圈中，享有极高的地位和巨大的影响力。作为&#34;小唱&#34;的顶尖艺人，她所演唱的曲目多为当时的名家词作。一首新词，如果能得到李师师的青睐和演唱，其知名度和影响力将会大大提升<a class="citation" href="https://baike.baidu.com/item/%E6%9D%8E%E5%B8%88%E5%B8%88/6174?noadapt=1">[279]</a>。
+          </p>
+
+          <h3 class="subsection-title serif" id="section2-2">2.2 对文学艺术的直接影响</h3>
+
+          <h4 class="text-xl font-semibold mb-4 mt-8">宋词创作：文人词作与歌妓传唱的双向互动</h4>
+          <p class="mb-6">
+            宋词的繁荣，与歌妓的传唱密不可分，二者之间形成了一种双向互动的关系。李师师作为北宋末年最顶尖的歌妓，在这一互动关系中扮演了至关重要的角色。她所擅长的&#34;小唱&#34;，是宋词最主要的演唱形式之一<a class="citation" href="https://baike.baidu.com/item/%E6%9D%8E%E5%B8%88%E5%B8%88/6174?noadapt=1">[279]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">周邦彦《少年游》的传说与考证</h4>
+          <p class="mb-6">
+            关于周邦彦的词作《少年游》，历史上流传着一个与李师师和宋徽宗有关的著名传说。据《贵耳集》等笔记小说记载，有一次，周邦彦正在李师师家中，恰逢宋徽宗突然到访。情急之下，周邦彦只好躲到床底下<a class="citation" href="http://www.scichi.cn/content.php?id=6681">[280]</a>
+            <a class="citation" href="https://wapbaike.baidu.com/tashuo/browse/content?id=4c205afcd1b21034abb511c6">[271]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">绘画艺术：宋徽宗与李师师的互动传闻</h4>
+          <p class="mb-6">
+            据《李师师外传》记载，宋徽宗对李师师宠爱有加，曾亲自为她作画，并赠送给她。李师师则将这幅画挂在房间里，每当思念徽宗时，便对着画抚琴，以寄托相思之情<a class="citation" href="http://eprints.utar.edu.my/2287/1/CH-2016-1300227-1.pdf">[255]</a>。
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="py-16 px-8 max-w-6xl mx-auto bg-white" id="section3">
+        <h2 class="section-title serif">3. 靖康年间汴梁城的文化艺术生态</h2>
+
+        <div class="prose prose-lg max-w-none">
+          <h3 class="subsection-title serif" id="section3-1">3.1 宫廷与民间的文艺活动</h3>
+
+          <h4 class="text-xl font-semibold mb-4 mt-8">宫廷文艺：宋徽宗的审美与宣和画院的繁荣</h4>
+          <p class="mb-6">
+            宋徽宗赵佶，作为一位&#34;诸事皆能，独不能为君&#34;的皇帝，其在位期间，对北宋宫廷文艺的发展产生了深远的影响。他设立了御前书画所，广收历代书画珍品，并命人编纂了《宣和书谱》、《宣和画谱》、《宣和博古图》等著作<a class="citation" href="http://www.xinhuanet.com/politics/2017-02/24/c_129495065.htm">[250]</a>
+            <a class="citation" href="https://zhuanlan.zhihu.com/p/27926557">[243]</a>。
+          </p>
+
+          <div class="mb-8">
+            <img alt="北宋宣和画院画家创作场景" class="w-full h-64 object-cover rounded-lg shadow-md" src="https://kimi-web-img.moonshot.cn/img/placeholder-0620/%E5%9B%BE%E7%89%877.png" size="medium" aspect="wide" style="linedrawing" query="北宋宣和画院" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+            <p class="text-sm text-gray-500 mt-2 text-center">宣和画院创作场景再现</p>
+          </div>
+
+          <h4 class="text-xl font-semibold mb-4">民间文艺：瓦子勾栏的杂剧、百戏与说书</h4>
+          <p class="mb-6">
+            与宫廷文艺的精致典雅不同，北宋汴梁的民间文艺则呈现出一种生机勃勃、丰富多彩的市井气息。瓦子和勾栏，是当时最主要的民间娱乐场所。据《东京梦华录》记载，汴梁城内有大小勾栏五十余座，其中最大的可容纳数千人<a class="citation" href="https://m.douban.com/note/824282378/">[245]</a>
+            <a class="citation" href="https://www.chinanews.com.cn/cul/news/2009/12-23/2033891.shtml">[248]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">官民同乐：金明池争标等节庆活动</h4>
+          <p class="mb-6">
+            在北宋末年的汴梁，宫廷与民间的文化界限并非泾渭分明，许多大型的节庆活动都体现了&#34;官民同乐&#34;的特点。每年三月在金明池举行的&#34;争标&#34;活动，从三月初一开始排练，就吸引了大量市民前来观看<a class="citation" href="http://m.cyol.com/gb/articles/2021-12/16/content_dME3At07L.html">[302]</a>。
+          </p>
+
+          <h3 class="subsection-title serif" id="section3-2">3.2 文化消费模式与社会氛围</h3>
+
+          <h4 class="text-xl font-semibold mb-4 mt-8">汴梁作为文化消费中心</h4>
+          <p class="mb-6">
+            北宋末年的汴梁，不仅是政治中心，更是一个巨大的文化消费市场。城市的繁荣和市民阶层的壮大，催生了对文化娱乐产品的巨大需求，使得汴梁成为一个名副其实的&#34;东方最大的游艺场&#34;<a class="citation" href="https://www.meizhang.com/shekezazhi/zywwzz/680359.html">[300]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">艺术品的市场化与商品化</h4>
+          <p class="mb-6">
+            在北宋末年汴梁高度发达的文化消费市场中，艺术品的市场化与商品化趋势日益显著。绘画、书法、诗词等原本主要属于文人雅士之间交流酬唱的艺术形式，也开始进入流通领域，成为可以买卖的商品<a class="citation" href="https://news.sina.com.cn/o/2005-04-04/06275545683s.shtml">[301]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">奢靡之风与社会危机的伏笔</h4>
+          <p class="mb-6">
+            北宋末年汴梁城文化艺术的高度繁荣，与社会上日益盛行的奢靡之风相伴相生，而这种风气也为后来的社会危机埋下了伏笔。以宋徽宗为代表的统治阶层，生活极度奢靡，大兴土木，搜罗奇花异石，耗费了大量国力<a class="citation" href="https://www.163.com/dy/article/EI2I4U2A054391C8.html">[211]</a>。
+          </p>
+
+          <h3 class="subsection-title serif" id="section3-3">3.3 李师师在文化生态中的角色</h3>
+
+          <h4 class="text-xl font-semibold mb-4 mt-8">连接宫廷与民间的文化纽带</h4>
+          <p class="mb-6">
+            在北宋末年汴梁城复杂而多元的文化生态中，李师师扮演了一个极为特殊且重要的角色——连接宫廷与民间的文化纽带。她的身份和影响力，使她能够跨越森严的等级界限，将两个原本相对隔绝的文化圈层紧密地联系在一起<a class="citation" href="http://eprints.utar.edu.my/2287/1/CH-2016-1300227-1.pdf">[298]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">引领时尚潮流与艺术品味</h4>
+          <p class="mb-6">
+            作为北宋末年最负盛名的&#34;角妓&#34;，李师师不仅是文艺界的明星，更是引领时尚潮流和艺术品味的重要人物。她的言行举止、服饰妆容、审美偏好，都可能成为当时社会模仿的对象<a class="citation" href="http://www.360doc.com/content/17/1004/22/18841360_692274043.shtml">[183]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">作为文化消费符号的意义</h4>
+          <p class="mb-6">
+            在北宋末年高度发达的文化消费市场中，李师师已经超越了一个普通艺人的身份，成为一个极具价值的文化消费符号。她的名字本身就代表着顶级的艺术水准、高雅的文化品味和奢华的生活方式<a class="citation" href="https://m.thepaper.cn/newsDetail_forward_7289357">[186]</a>。
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="py-16 px-8 max-w-6xl mx-auto bg-gray-50" id="section4">
+        <h2 class="section-title serif">4. 靖康之变：一个时代的终结与文艺的转折</h2>
+
+        <div class="prose prose-lg max-w-none">
+          <h3 class="subsection-title serif" id="section4-1">4.1 汴梁的陷落与文化的断裂</h3>
+
+          <h4 class="text-xl font-semibold mb-4 mt-8">金兵入侵对汴梁文化生态的毁灭性打击</h4>
+          <p class="mb-6">
+            靖康之变对汴梁文化生态的打击是毁灭性的。金兵的入侵不仅摧毁了这座城市的物质繁荣，更彻底瓦解了其赖以生存的文化土壤。人口的大量流失与死亡导致了文化消费主体的消失，文化场所的破坏使得文化活动失去了物理空间。
+          </p>
+
+          <div class="mb-8">
+            <img alt="北宋画家李唐的《万壑松风图》描绘的山水意境" class="w-full h-64 object-cover rounded-lg shadow-md" src="https://kimi-web-img.moonshot.cn/img/i.epochtimes.com/c1c964cc134ffe6ee2cc7d511face0346ada6627.jpg" size="medium" aspect="wide" color="green" style="photo" query="李唐 万壑松风图" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+            <p class="text-sm text-gray-500 mt-2 text-center">靖康之变后文化南迁的历史见证</p>
+          </div>
+
+          <h4 class="text-xl font-semibold mb-4">宫廷藏画的流散与画家的南迁</h4>
+          <p class="mb-6">
+            靖康之变不仅是一场政治和军事的灾难，更是一场文化的浩劫。金兵攻破汴京后，对这座繁华的都城进行了残酷的洗劫，其中，对宫廷文化财富的掠夺尤为严重。金人曾向北宋朝廷索要包括&#34;雕刻图画工匠三百余家&#34;在内的大量技术人员和艺术家<a class="citation" href="https://www.meizhang.com/shekezazhi/zywwzz/680359.html">[300]</a>。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">文人心态的转变：从盛世欢歌到亡国之痛</h4>
+          <p class="mb-6">
+            靖康之变是宋代文人心态的分水岭。在此之前，北宋文人生活在相对安定、富足的社会环境中，其文艺创作多以个人情感的抒发、生活情趣的描绘和对艺术形式的探索为主。然而，靖康之耻如同一场突如其来的噩梦，彻底击碎了他们的盛世迷梦。
+          </p>
+
+          <h3 class="subsection-title serif" id="section4-2">4.2 文艺表达中的末世记忆</h3>
+
+          <h4 class="text-xl font-semibold mb-4 mt-8">李清照词作中的个人命运与国家兴亡</h4>
+          <p class="mb-6">
+            靖康之变是宋代历史的分水岭，也是无数文人命运的转折点。对于女词人李清照而言，这场巨变彻底颠覆了她的人生。靖康之乱后，国破、家亡、夫死，一连串的打击使她尝尽了颠沛流离的苦痛<a class="citation" href="https://www.gushiwen.cn/mingju/juv_05a05e8f46cd.aspx">[289]</a>。
+          </p>
+
+          <div class="pullquote serif">
+            &#34;守着窗儿，独自怎生得黑&#34;
+            <div class="text-sm mt-4 text-gray-600">—— 李清照《声声慢》</div>
+          </div>
+
+          <h4 class="text-xl font-semibold mb-4">《宣和遗事》等笔记小说对盛世的追忆与反思</h4>
+          <p class="mb-6">
+            靖康之变后，面对山河破碎的现实，许多文人通过笔记小说的形式，追忆和反思那个刚刚逝去的&#34;宣和盛世&#34;。《大宋宣和遗事》便是其中的代表作。这部作品以编年体的形式，记录了从王安石变法到靖康之变的历史。
+          </p>
+
+          <h4 class="text-xl font-semibold mb-4">李师师作为末世记忆的载体与象征</h4>
+          <p class="mb-6">
+            在靖康之变后的文艺表达中，李师师的形象被反复书写和重构，逐渐超越了其历史人物的本身，成为一个承载着关于北宋末世集体记忆的强大文化符号。无论是刘子翚诗中&#34;师师垂老过湖湘&#34;的凄凉晚景，还是《李师师外传》中她慷慨殉国的悲壮结局，都寄托了后人对那个逝去时代的复杂情感<a class="citation" href="https://m.gushiwen.cn/shiwenv_c689eae0951f.aspx">[294]</a>
+            <a class="citation" href="http://eprints.utar.edu.my/2287/1/CH-2016-1300227-1.pdf">[298]</a>。
+          </p>
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section class="py-16 px-8 max-w-6xl mx-auto">
+        <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg p-12 text-center">
+          <h2 class="text-3xl font-bold serif mb-8 text-gray-800">结语</h2>
+          <div class="max-w-4xl mx-auto">
+            <p class="text-xl leading-relaxed text-gray-700 mb-8">
+              李师师的故事，不仅仅是一个绝代名妓的个人传奇，更是北宋末年那个繁华而又脆弱时代的缩影。她的命运沉浮，与王朝的兴衰紧密相连；她的文化影响力，超越了青楼的范畴，渗透到宫廷与社会的各个层面。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-600">
+              靖康之变后，李师师作为一个文化符号的意义更加凸显。她承载着人们对北宋繁华旧梦的追忆，对靖康之耻的沉痛反思，以及对那些在乱世中坚守气节的个体的敬意。她的故事，将永远与那个风云变幻的时代紧密相连，成为中华民族集体记忆中不可磨灭的一部分。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mermaid Chart Section -->
+      <section class="py-16 px-8 max-w-6xl mx-auto bg-white">
+        <h2 class="section-title serif mb-8">李师师文化关系网络图</h2>
+        <div class="mermaid-container">
+          <div class="mermaid-controls">
+            <button class="mermaid-control-btn zoom-in" title="放大">
+              <i class="fas fa-search-plus"></i>
+            </button>
+            <button class="mermaid-control-btn zoom-out" title="缩小">
+              <i class="fas fa-search-minus"></i>
+            </button>
+            <button class="mermaid-control-btn reset-zoom" title="重置">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </button>
+            <button class="mermaid-control-btn fullscreen" title="全屏查看">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+          <div class="mermaid">
+            graph TB
+            A[&#34;李师师&#34;] --&gt; B[&#34;文人雅士圈&#34;]
+            A --&gt; C[&#34;宫廷文化&#34;]
+            A --&gt; D[&#34;民间文艺&#34;]
+            A --&gt; E[&#34;文化消费市场&#34;]
+
+            B --&gt; B1[&#34;周邦彦&#34;]
+            B --&gt; B2[&#34;晁冲之&#34;]
+            B --&gt; B3[&#34;秦观&#34;]
+
+            C --&gt; C1[&#34;宋徽宗&#34;]
+            C --&gt; C2[&#34;宣和画院&#34;]
+            C --&gt; C3[&#34;宫廷审美&#34;]
+
+            D --&gt; D1[&#34;瓦子勾栏&#34;]
+            D --&gt; D2[&#34;小唱艺术&#34;]
+            D --&gt; D3[&#34;宋词传唱&#34;]
+
+            E --&gt; E1[&#34;金钱巷&#34;]
+            E --&gt; E2[&#34;文化符号&#34;]
+            E --&gt; E3[&#34;时尚潮流&#34;]
+
+            F[&#34;靖康之变&#34;] --&gt; A
+            F --&gt; G[&#34;文化断裂&#34;]
+            F --&gt; H[&#34;集体记忆&#34;]
+
+            style A fill:#d4af37,stroke:#333,stroke-width:3px,color:#fff
+            style F fill:#dc2626,stroke:#333,stroke-width:2px,color:#fff
+            style B fill:#3b82f6,stroke:#333,stroke-width:2px,color:#fff
+            style C fill:#8b5cf6,stroke:#333,stroke-width:2px,color:#fff
+            style D fill:#10b981,stroke:#333,stroke-width:2px,color:#fff
+            style E fill:#f59e0b,stroke:#333,stroke-width:2px,color:#fff
+          </div>
+        </div>
+        <p class="text-sm text-gray-600 mt-4 text-center">
+          此图展示了李师师在北宋末年文化生态中的核心地位及其与各文化领域的复杂关系
+        </p>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12 px-8">
+        <div class="max-w-6xl mx-auto text-center">
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4">参考文献</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+              <div class="bg-gray-800 p-4 rounded">
+                <h4 class="font-semibold mb-2">历史文献</h4>
+                <ul class="space-y-1 text-gray-300">
+                  <li>《东京梦华录》</li>
+                  <li>《三朝北盟会编》</li>
+                  <li>《李师师外传》</li>
+                  <li>《大宋宣和遗事》</li>
+                </ul>
+              </div>
+              <div class="bg-gray-800 p-4 rounded">
+                <h4 class="font-semibold mb-2">文学作品</h4>
+                <ul class="space-y-1 text-gray-300">
+                  <li>刘子翚《汴京纪事》</li>
+                  <li>李清照词作</li>
+                  <li>周邦彦《少年游》</li>
+                  <li>《水浒传》相关章节</li>
+                </ul>
+              </div>
+              <div class="bg-gray-800 p-4 rounded">
+                <h4 class="font-semibold mb-2">现代研究</h4>
+                <ul class="space-y-1 text-gray-300">
+                  <li>宋代城市文化研究</li>
+                  <li>青楼文化史</li>
+                  <li>宋词传播研究</li>
+                  <li>靖康之变文化影响</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-gray-700 pt-8">
+            <p class="text-gray-400">
+              2025 靖康年间的汴梁文化研究 | 基于历史文献的学术探讨
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#d4af37',
+                primaryTextColor: '#ffffff',
+                primaryBorderColor: '#333333',
+                lineColor: '#64748b',
+                secondaryColor: '#f1f5f9',
+                tertiaryColor: '#ffffff',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondBkg: '#f8fafc',
+                tertiaryBkg: '#f1f5f9',
+                nodeBorder: '#333333',
+                clusterBkg: '#f8fafc',
+                clusterBorder: '#e2e8f0',
+                defaultLinkColor: '#64748b',
+                titleColor: '#1e293b',
+                edgeLabelBackground: '#ffffff',
+                nodeTextColor: '#1e293b'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20
+            },
+            fontFamily: 'Inter, sans-serif'
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+            const mermaidElement = container.querySelector('.mermaid');
+            let scale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            // 触摸相关状态
+            let isTouch = false;
+            let touchStartTime = 0;
+            let initialDistance = 0;
+            let initialScale = 1;
+            let isPinching = false;
+
+            // Zoom controls
+            const zoomInBtn = container.querySelector('.zoom-in');
+            const zoomOutBtn = container.querySelector('.zoom-out');
+            const resetBtn = container.querySelector('.reset-zoom');
+            const fullscreenBtn = container.querySelector('.fullscreen');
+
+            function updateTransform() {
+                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                if (scale > 1) {
+                container.classList.add('zoomed');
+                } else {
+                container.classList.remove('zoomed');
+                }
+
+                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', () => {
+                scale = Math.min(scale * 1.25, 4);
+                updateTransform();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', () => {
+                scale = Math.max(scale / 1.25, 0.3);
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                updateTransform();
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                });
+            }
+
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', () => {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                });
+            }
+
+            // Mouse Events
+            mermaidElement.addEventListener('mousedown', (e) => {
+                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidElement.style.cursor = 'grabbing';
+                updateTransform();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && !isTouch) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            // 获取两点之间的距离
+            function getTouchDistance(touch1, touch2) {
+                return Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+                );
+            }
+
+            // Touch Events - 触摸事件处理
+            mermaidElement.addEventListener('touchstart', (e) => {
+                isTouch = true;
+                touchStartTime = Date.now();
+
+                if (e.touches.length === 1) {
+                // 单指拖动
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+
+                } else if (e.touches.length === 2) {
+                // 双指缩放
+                isPinching = true;
+                isDragging = false;
+
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                initialDistance = getTouchDistance(touch1, touch2);
+                initialScale = scale;
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && !isPinching) {
+                // 单指拖动
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+
+                } else if (e.touches.length === 2 && isPinching) {
+                // 双指缩放
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = getTouchDistance(touch1, touch2);
+
+                if (initialDistance > 0) {
+                    const newScale = Math.min(Math.max(
+                    initialScale * (currentDistance / initialDistance),
+                    0.3
+                    ), 4);
+                    scale = newScale;
+                    updateTransform();
+                }
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchend', (e) => {
+                // 重置状态
+                if (e.touches.length === 0) {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                // 延迟重置isTouch，避免鼠标事件立即触发
+                setTimeout(() => {
+                    isTouch = false;
+                }, 100);
+                } else if (e.touches.length === 1 && isPinching) {
+                // 从双指变为单指，切换为拖动模式
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+                }
+
+                updateTransform();
+            });
+
+            mermaidElement.addEventListener('touchcancel', (e) => {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                setTimeout(() => {
+                isTouch = false;
+                }, 100);
+
+                updateTransform();
+            });
+
+            // Enhanced wheel zoom with better center point handling
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                // Adjust translation to zoom towards center
+                if (newScale !== scale) {
+                const scaleDiff = newScale / scale;
+                translateX = translateX * scaleDiff;
+                translateY = translateY * scaleDiff;
+                scale = newScale;
+
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+
+                updateTransform();
+                }
+            });
+
+            // Initialize display
+            updateTransform();
+            });
+        }
+
+        // Initialize mermaid controls after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMermaidControls();
+        });
+
+        // Table of Contents functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tocLinks = document.querySelectorAll('.toc-link');
+            const sections = document.querySelectorAll('section[id], div[id]');
+            
+            // Smooth scrolling for TOC links
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Update active TOC link on scroll
+            function updateActiveTocLink() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.scrollY >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Throttled scroll event
+            let ticking = false;
+            function onScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        updateActiveTocLink();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', onScroll);
+            updateActiveTocLink(); // Initial call
+        });
+
+        // Mobile TOC toggle
+        function toggleTOC() {
+            const toc = document.querySelector('.toc-fixed');
+            toc.classList.toggle('open');
+        }
+
+        // Add mobile TOC button for small screens
+        if (window.innerWidth <= 1024) {
+            const tocToggle = document.createElement('button');
+            tocToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            tocToggle.className = 'fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg lg:hidden';
+            tocToggle.onclick = toggleTOC;
+            document.body.appendChild(tocToggle);
+        }
+    </script>
+
+  
+
+</body></html>
